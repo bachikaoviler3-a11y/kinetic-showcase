@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>YOUR BRAND — Ultra-Smooth Kinetic 3D Showcase & Editorial Journey</title>
+    <meta name="description" content="White-Label 3D Kinetic Showcase combining real-time 3D physics, cursor-tilt, 720° variant transitions, and luxury editorial storytelling.">
+    
+    <!-- OpenGraph & Social Sharing Cards -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="YOUR BRAND — Ultra-Smooth Kinetic 3D Showcase">
+    <meta property="og:description" content="สถาปัตยกรรมจัดแสดงสินค้า 3D เชิงจลน์ระดับลักชัวรี พร้อมฟิสิกส์ตอบสนองและเนื้อเรื่องแบบ Editorial Scrollytelling">
+    <meta property="og:image" content="https://bachikaoviler3-a11y.github.io/kinetic-showcase/og_preview.png">
+    <meta property="og:url" content="https://bachikaoviler3-a11y.github.io/kinetic-showcase/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YOUR BRAND — Ultra-Smooth Kinetic 3D Showcase">
+    <meta name="twitter:description" content="White-Label 3D Kinetic Showcase with real-time physics & editorial storytelling.">
+    <meta name="twitter:image" content="https://bachikaoviler3-a11y.github.io/kinetic-showcase/og_preview.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600;700&family=Cinzel:wght@700;800;900&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Galada&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;600;700;800&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600;1,800&family=Pridi:wght@400;500;600;700&family=Prompt:wght@400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Core External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-emerald font-editorial-sans">
+    <!-- Rising Ambient Bubbles -->
+    <div id="bubbles-container" aria-hidden="true"></div>
+
+    <!-- Navigation Bar -->
+    <header class="header">
+        <div class="logo">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M12 7V17M7 12H17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <span class="brand-text">YOUR BRAND</span>
+            <span class="showcase-tag" data-en="WHITE-LABEL" data-th="ตัวอย่างไม่ติดแบรนด์">WHITE-LABEL</span>
+        </div>
+
+        <nav class="nav glass">
+            <a href="#hero" class="nav-item active" data-en="Overview" data-th="ภาพรวม">Overview</a>
+            <a href="#vessel" class="nav-item" data-en="The Vessel" data-th="รูปลักษณ์">The Vessel</a>
+            <a href="#composition" class="nav-item" data-en="Formula" data-th="ส่วนผสม">Formula</a>
+            <a href="#craft" class="nav-item" data-en="Craft" data-th="งานฝีมือ">Craft</a>
+            <a href="#boutique" class="nav-item" data-en="Acquire" data-th="เป็นเจ้าของ">Acquire</a>
+        </nav>
+
+        <div class="header-actions">
+            <button type="button" class="lang-toggle-btn" id="lang-btn" aria-label="Switch Language">
+                <span class="active-lang">TH</span> / EN
+            </button>
+            <a href="#boutique" class="contact-btn" data-en="Select Edition" data-th="เลือกรุ่นสินค้า">เลือกรุ่นสินค้า</a>
+        </div>
+    </header>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-tracker" aria-hidden="true">
+        <div class="scroll-bar" id="scroll-bar"></div>
+    </div>
+
+    <!-- Persistent Fixed 3D Stage Background -->
+    <div class="fixed-3d-stage" id="fixed-stage">
+        <!-- Floating Leaves (Far Background) -->
+        <div class="leaves-container" aria-hidden="true">
+            <model-viewer class="leaf l1" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="45deg 75deg 105%"></model-viewer>
+            <model-viewer class="leaf l2" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="-30deg 60deg 105%"></model-viewer>
+            <model-viewer class="leaf l3" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="120deg 85deg 105%"></model-viewer>
+            <model-viewer class="leaf l4" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="10deg 45deg 105%"></model-viewer>
+        </div>
+
+        <!-- Background Berries / Botanical Spheres -->
+        <div class="berries-container-bg" aria-hidden="true">
+            <model-viewer class="berry b7" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="-20deg 110deg 105%"></model-viewer>
+            <model-viewer class="berry b8" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="160deg 45deg 105%"></model-viewer>
+            <model-viewer class="berry b9" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="45deg 20deg 105%"></model-viewer>
+        </div>
+
+        <!-- Center 3D Product Stage Anchor -->
+        <div class="hero-center" id="hero-center-node">
+            <div class="can-glow-disc"></div>
+            <model-viewer id="product-model"
+                src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/deit_soda2.glb"
+                alt="Interactive 3D Product Canvas"
+                camera-controls
+                disable-zoom
+                shadow-intensity="0"
+                environment-image="neutral"
+                exposure="1.45"
+                interaction-prompt="none"
+                camera-orbit="0deg 90deg 380%"
+                field-of-view="30deg"
+                class="main-product-3d">
+            </model-viewer>
+        </div>
+
+        <!-- Foreground Berries / Mineral Crystals (Above Center Product) -->
+        <div class="berries-container" aria-hidden="true">
+            <model-viewer class="berry b1" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="45deg 120deg 105%"></model-viewer>
+            <model-viewer class="berry b2" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="-120deg 45deg 105%"></model-viewer>
+            <model-viewer class="berry b3" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="200deg 90deg 105%"></model-viewer>
+            <model-viewer class="berry b4" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="10deg 20deg 105%"></model-viewer>
+            <model-viewer class="berry b5" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="-45deg 160deg 105%"></model-viewer>
+            <model-viewer class="berry b6" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="80deg 75deg 105%"></model-viewer>
+        </div>
+    </div>
+
+    <!-- MAIN SCROLLABLE SECTIONS WRAPPER -->
+    <main class="page-container">
+        <!-- ==================== SCENE 1: KINETIC HERO ==================== -->
+        <section class="scene scene-hero" id="hero">
+            <div class="hero-content">
+                <!-- Left Column -->
+                <div class="hero-left">
+                    <span class="hero-pre-badge" data-en="SIGNATURE COLLECTION 2026" data-th="คอลเลกชันซิกเนเจอร์ 2026">คอลเลกชันซิกเนเจอร์ 2026</span>
+                    <h1 class="main-title">
+                        <span class="outline" data-en="Pure" data-th="เอกลักษณ์">เอกลักษณ์</span><br>
+                        <span class="solid-title" data-en="Iconic" data-th="แห่งความบริสุทธิ์">แห่งความบริสุทธิ์</span>
+                    </h1>
+                    <p class="description" data-en="Experience uncompromised tactile design. Floating 3D kinetic interaction, responsive force-field particles, and liquid transitions engineered for timeless brand presentation." data-th="สัมผัสประสบการณ์งานดีไซน์เชิงจลน์สามมิติ ชิ้นงานหมุนตอบสนองเคอร์เซอร์พร้อมระบบฟิสิกส์กระจายอนุภาครอบทิศทาง และการเปลี่ยนสีสองเฉดที่นุ่มนวลไร้รอยต่อ">
+                        สัมผัสประสบการณ์งานดีไซน์เชิงจลน์สามมิติ ชิ้นงานหมุนตอบสนองเคอร์เซอร์พร้อมระบบฟิสิกส์กระจายอนุภาครอบทิศทาง และการเปลี่ยนสีสองเฉดที่นุ่มนวลไร้รอยต่อ
+                    </p>
+                    <div class="cta-group">
+                        <a href="#boutique" class="primary-btn">
+                            <span data-en="Explore Collection" data-th="สำรวจคอลเลกชัน">สำรวจคอลเลกชัน</span>
+                            <span class="plus-icon">+</span>
+                        </a>
+                        <a href="#vessel" class="ghost-btn">
+                            <span data-en="Scroll to Discover" data-th="เลื่อนเพื่อสำรวจ">เลื่อนเพื่อสำรวจ ↓</span>
+                        </a>
+                    </div>
+                    <div class="award-badge">
+                        <div class="award-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </div>
+                        <div class="award-text">
+                            <span class="award-title" data-en="INTERNATIONAL DESIGN AWARDS" data-th="รางวัลการออกแบบยอดเยี่ยม">รางวัลการออกแบบยอดเยี่ยม</span>
+                            <span class="award-subtitle" data-en="PREMIUM SHOWCASE ARCHITECTURE 2026" data-th="สถาปัตยกรรมดิจิทัลระดับพรีเมียม 2026">สถาปัตยกรรมดิจิทัลระดับพรีเมียม 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Dual-Variant Carousel -->
+                <div class="hero-right">
+                    <div class="product-carousel">
+                        <div class="carousel-cards">
+                            <!-- Variant 1: Emerald Essence -->
+                            <div class="card active" data-flavor="emerald" id="card-emerald" tabindex="0" role="button" aria-label="Switch to Emerald Essence">
+                                <div class="card-thumb-wrap">
+                                    <div class="card-pill-tag">01</div>
+                                    <div class="card-color-preview emerald-preview"></div>
+                                </div>
+                                <div class="card-info">
+                                    <span class="card-title" data-en="Emerald Essence" data-th="เอเมอรัลด์ เอสเซนส์">เอเมอรัลด์ เอสเซนส์</span>
+                                    <span class="card-flavor" data-en="Mint & Botanical Salt" data-th="มิ้นต์และเกลือสมุนไพร">มิ้นต์และเกลือสมุนไพร</span>
+                                    <span class="card-price">฿3,800</span>
+                                </div>
+                            </div>
+
+                            <!-- Variant 2: Cobalt Mist -->
+                            <div class="card" data-flavor="cobalt" id="card-cobalt" tabindex="0" role="button" aria-label="Switch to Cobalt Mist">
+                                <div class="card-thumb-wrap">
+                                    <div class="card-pill-tag">02</div>
+                                    <div class="card-color-preview cobalt-preview"></div>
+                                </div>
+                                <div class="card-info">
+                                    <span class="card-title" data-en="Cobalt Mist" data-th="โคบอลต์ มิสต์">โคบอลต์ มิสต์</span>
+                                    <span class="card-flavor" data-en="Marine Iris & Cedar" data-th="ไอริสมหาสมุทรและไม้ซีดาร์">ไอริสมหาสมุทรและไม้ซีดาร์</span>
+                                    <span class="card-price">฿3,800</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-nav">
+                            <button type="button" class="nav-arrow" id="prev-btn" aria-label="Previous Variant">←</button>
+                            <span class="carousel-counter"><strong id="cur-card-idx">01</strong> / 02</span>
+                            <button type="button" class="nav-arrow" id="next-btn" aria-label="Next Variant">→</button>
+                        </div>
+                    </div>
+
+                    <h2 class="side-title">
+                        <span class="outline" data-en="Refreshingly" data-th="ความงามที่">ความงามที่</span><br>
+                        <span data-en="Quiet" data-th="สะกดสายตา">สะกดสายตา</span>
+                    </h2>
+                </div>
+            </div>
+            
+            <div class="scroll-cue">
+                <span data-en="Scroll Down" data-th="เลื่อนลง">เลื่อนลง</span>
+                <div class="mouse-icon"><div class="mouse-wheel"></div></div>
+            </div>
+        </section>
+
+        <!-- ==================== SCENE 2: THE VESSEL ==================== -->
+        <section class="scene scene-vessel" id="vessel">
+            <div class="editorial-container left-layout">
+                <div class="chapter-badge">
+                    <span class="chapter-num">CHAPTER 01</span>
+                    <span class="chapter-dot">•</span>
+                    <span class="chapter-name" data-en="THE VESSEL" data-th="สรีระและงานสร้าง">สรีระและงานสร้าง</span>
+                </div>
+                
+                <h2 class="editorial-heading" data-en="Tactile precision, distilled into form." data-th="ความแม่นยำแห่งสัมผัส ถ่ายทอดสู่รูปทรงอันไร้กาลเวลา">
+                    ความแม่นยำแห่งสัมผัส ถ่ายทอดสู่รูปทรงอันไร้กาลเวลา
+                </h2>
+                
+                <p class="editorial-copy" data-en="Engineered with balanced weight, brushed anodized texture, and light-trapping micro-facets. Designed to rest effortlessly in the hand while commanding attention in any space." data-th="รังสรรค์ด้วยสมดุลน้ำหนักที่ลงตัว ผิวสัมผัสอะลูมิเนียมขัดด้านที่สะท้อนแสงนุ่มนวล โอบรับสรีระมืออย่างเป็นธรรมชาติและโดดเด่นในทุกสายตา">
+                    รังสรรค์ด้วยสมดุลน้ำหนักที่ลงตัว ผิวสัมผัสอะลูมิเนียมขัดด้านที่สะท้อนแสงนุ่มนวล โอบรับสรีระมืออย่างเป็นธรรมชาติและโดดเด่นในทุกสายตา
+                </p>
+
+                <div class="spec-metrics-grid">
+                    <div class="metric-card glass">
+                        <span class="metric-value">0.02<small>mm</small></span>
+                        <span class="metric-label" data-en="Machined Tolerance" data-th="ความละเอียดผิวสัมผัส">ความละเอียดผิวสัมผัส</span>
+                    </div>
+                    <div class="metric-card glass">
+                        <span class="metric-value">100<small>%</small></span>
+                        <span class="metric-label" data-en="Infinitely Recyclable" data-th="รีไซเคิลได้ไม่รู้จบ">รีไซเคิลได้ไม่รู้จบ</span>
+                    </div>
+                    <div class="metric-card glass">
+                        <span class="metric-value">120<small>FPS</small></span>
+                        <span class="metric-label" data-en="Fluid Motion Response" data-th="การเคลื่อนไหวสมูท">การเคลื่อนไหวสมูท</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SCENE 3: THE COMPOSITION ==================== -->
+        <section class="scene scene-composition" id="composition">
+            <div class="editorial-container right-layout">
+                <div class="chapter-badge">
+                    <span class="chapter-num">CHAPTER 02</span>
+                    <span class="chapter-dot">•</span>
+                    <span class="chapter-name" data-en="THE COMPOSITION" data-th="โครงสร้างและกลิ่นสัมผัส">โครงสร้างและกลิ่นสัมผัส</span>
+                </div>
+
+                <h2 class="editorial-heading" data-en="Notes layered like light upon water." data-th="ชั้นเลเยอร์แห่งกลิ่นสัมผัส ดั่งประกายแสงบนผิวน้ำ">
+                    ชั้นเลเยอร์แห่งกลิ่นสัมผัส ดั่งประกายแสงบนผิวน้ำ
+                </h2>
+
+                <p class="editorial-copy" data-en="A tripartite harmonic architecture that opens with crisp mineral clarity, softens into crystalline botanical dew, and anchors upon serene coastal resins." data-th="โครงสร้างสามมิติที่เริ่มต้นด้วยความสดชื่นของสายน้ำและมิเนอรัล ละมุนสู่ความหอมละเมียดของมวลดอกไม้ และตรึงความประทับใจด้วยไม้หอมอันเงียบสงบ">
+                    โครงสร้างสามมิติที่เริ่มต้นด้วยความสดชื่นของสายน้ำและมิเนอรัล ละมุนสู่ความหอมละเมียดของมวลดอกไม้ และตรึงความประทับใจด้วยไม้หอมอันเงียบสงบ
+                </p>
+
+                <!-- Fragrance / Product Note Cards -->
+                <div class="notes-stack">
+                    <div class="note-row glass" data-note="top">
+                        <span class="note-tier" data-en="TOP NOTES" data-th="กลิ่นเปิด">TOP NOTES</span>
+                        <div class="note-details">
+                            <strong data-en="Bergamot Peel, Sea Mist & Crushed Mint" data-th="ผิวเบอร์กามอต, ละอองคลื่น และใบมิ้นต์บด">ผิวเบอร์กามอต, ละอองคลื่น และใบมิ้นต์บด</strong>
+                            <p data-en="First breath: crisp, electric, and luminous." data-th="สัมผัสแรกที่ตื่นรู้ โปร่งใส กระปรี้กระเปร่า">สัมผัสแรกที่ตื่นรู้ โปร่งใส กระปรี้กระเปร่า</p>
+                        </div>
+                    </div>
+                    <div class="note-row glass" data-note="heart">
+                        <span class="note-tier" data-en="HEART NOTES" data-th="กลิ่นหลัก">HEART NOTES</span>
+                        <div class="note-details">
+                            <strong data-en="Mineral Iris, Wild Blueberry & Lotus Dew" data-th="ไอริสมิเนอรัล, บลูเบอร์รี่ป่า และหยาดน้ำค้างบัว">ไอริสมิเนอรัล, บลูเบอร์รี่ป่า และหยาดน้ำค้างบัว</strong>
+                            <p data-en="Core body: elegant, velvety, and deep." data-th="แก่นแท้แห่งความสุขุม นุ่มลึก ละเมียดละไม">แก่นแท้แห่งความสุขุม นุ่มลึก ละเมียดละไม</p>
+                        </div>
+                    </div>
+                    <div class="note-row glass" data-note="base">
+                        <span class="note-tier" data-en="BASE NOTES" data-th="กลิ่นตรึงฐาน">BASE NOTES</span>
+                        <div class="note-details">
+                            <strong data-en="Coastal Driftwood, White Sandalwood & Ambergris" data-th="ไม้ลอยน้ำชายฝั่ง, ไม้จันทน์ขาว และแอมเบอร์กริส">ไม้ลอยน้ำชายฝั่ง, ไม้จันทน์ขาว และแอมเบอร์กริส</strong>
+                            <p data-en="Enduring trace: warm, intimate, and persistent." data-th="ร่องรอยอันยาวนาน อบอุ่น สงบนิ่ง และน่าจดจำ">ร่องรอยอันยาวนาน อบอุ่น สงบนิ่ง และน่าจดจำ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SCENE 4: CRAFT & ETHOS ==================== -->
+        <section class="scene scene-craft" id="craft">
+            <div class="editorial-container center-layout">
+                <div class="chapter-badge">
+                    <span class="chapter-num">CHAPTER 03</span>
+                    <span class="chapter-dot">•</span>
+                    <span class="chapter-name" data-en="PURITY & ETHOS" data-th="ปรัชญาและความบริสุทธิ์">ปรัชญาและความบริสุทธิ์</span>
+                </div>
+
+                <h2 class="editorial-heading" data-en="Substance over spectacle." data-th="คุณค่าแท้จริงที่อยู่เหนือกาลเวลา">
+                    คุณค่าแท้จริงที่อยู่เหนือกาลเวลา
+                </h2>
+
+                <p class="editorial-copy max-copy" data-en="Every batch is created without artificial dyes, synthetic fillers, or unnecessary additives. We believe true luxury whispers through purity and uncompromising material ethics." data-th="ทุกกระบวนการผลิตปราศจากสารแต่งสีสังเคราะห์ สารเติมเต็ม หรือสิ่งเจือปนที่ไม่จำเป็น เพราะความหรูหราที่แท้จริงคือความบริสุทธิ์และความรับผิดชอบต่อธรรมชาติ">
+                    ทุกกระบวนการผลิตปราศจากสารแต่งสีสังเคราะห์ สารเติมเต็ม หรือสิ่งเจือปนที่ไม่จำเป็น เพราะความหรูหราที่แท้จริงคือความบริสุทธิ์และความรับผิดชอบต่อธรรมชาติ
+                </p>
+
+                <div class="pillars-row">
+                    <div class="pillar-card glass">
+                        <div class="pillar-icon">✦</div>
+                        <h4 data-en="Cold-Distilled" data-th="สกัดเย็นบริสุทธิ์">สกัดเย็นบริสุทธิ์</h4>
+                        <p data-en="Preserves the living volatile essences." data-th="เก็บกักคุณค่าสารสกัดสดให้อยู่ครบถ้วน">เก็บกักคุณค่าสารสกัดสดให้อยู่ครบถ้วน</p>
+                    </div>
+                    <div class="pillar-card glass">
+                        <div class="pillar-icon">◈</div>
+                        <h4 data-en="Zero Compromise" data-th="ไร้สารเจือปน">ไร้สารเจือปน</h4>
+                        <p data-en="Zero synthetic parabens or heavy stabilizers." data-th="ปราศจากพาราเบนและสารเคมีสะสม">ปราศจากพาราเบนและสารเคมีสะสม</p>
+                    </div>
+                    <div class="pillar-card glass">
+                        <div class="pillar-icon">●</div>
+                        <h4 data-en="Micro-Batch" data-th="ผลิตจำนวนจำกัด">ผลิตจำนวนจำกัด</h4>
+                        <p data-en="Numbered vessels crafted in small runs." data-th="ใส่ใจในทุกรายละเอียดของทุกล็อตผลิต">ใส่ใจในทุกรายละเอียดของทุกล็อตผลิต</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SCENE 5: BOUTIQUE SELECTION ==================== -->
+        <section class="scene scene-boutique" id="boutique">
+            <div class="boutique-layout">
+                <!-- Left Story Column -->
+                <div class="boutique-left">
+                    <div class="chapter-badge">
+                        <span class="chapter-num">CHAPTER 04</span>
+                        <span class="chapter-dot">•</span>
+                        <span class="chapter-name" data-en="YOURS TO HOLD" data-th="เลือกเป็นเจ้าของ">เลือกเป็นเจ้าของ</span>
+                    </div>
+
+                    <h2 class="boutique-heading" data-en="Reserve your signature allocation." data-th="สำรองชิ้นงานซิกเนเจอร์ของคุณ">
+                        สำรองชิ้นงานซิกเนเจอร์ของคุณ
+                    </h2>
+
+                    <p class="boutique-sub" data-en="Delivered in a numbered, tactile matte box with personalized certificate of authenticity. Choose your preferred expression below." data-th="ส่งมอบในกล่องสั่งทำพิเศษพร้อมใบรับรองหมายเลขประจำชิ้นงาน เลือกรุ่นและขนาดที่เหมาะกับคุณ">
+                        ส่งมอบในกล่องสั่งทำพิเศษพร้อมใบรับรองหมายเลขประจำชิ้นงาน เลือกรุ่นและขนาดที่เหมาะกับคุณ
+                    </p>
+
+                    <!-- Interactive Variant Mini Switchers -->
+                    <div class="boutique-variant-toggles">
+                        <span class="toggle-lead" data-en="Active Expression:" data-th="รุ่นสินค้าที่เลือก:">รุ่นสินค้าที่เลือก:</span>
+                        <div class="mini-swatch-group">
+                            <button type="button" class="mini-swatch active" data-flavor="emerald" id="swatch-emerald">
+                                <span class="swatch-dot emerald-dot"></span>
+                                <span class="swatch-name">Edition 01 (Emerald)</span>
+                            </button>
+                            <button type="button" class="mini-swatch" data-flavor="cobalt" id="swatch-cobalt">
+                                <span class="swatch-dot cobalt-dot"></span>
+                                <span class="swatch-name">Edition 02 (Cobalt)</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Glass Boutique Purchase Card (Inspired by Nacre) -->
+                <div class="boutique-right">
+                    <div class="shop-card glass">
+                        <div class="shop-card-header">
+                            <div>
+                                <span class="edition-label" id="shop-edition-label">EDITION 01 • BOTANICAL BLEND</span>
+                                <h3 class="shop-product-name" id="shop-product-title">YOUR BRAND · NO. 01</h3>
+                            </div>
+                            <span class="shop-badge" id="shop-variant-badge">EMERALD</span>
+                        </div>
+
+                        <p class="shop-card-desc" id="shop-product-desc" data-en="Crisp botanical mint, sea salt crystals, and deep coastal pine. A tactile celebration of living nature." data-th="สัมผัสสดชื่นของมิ้นต์บริสุทธิ์ เกลือทะเล และไม้สนชายฝั่ง กลิ่นหอมที่เป็นเอกลักษณ์เฉพาะตัว">
+                            สัมผัสสดชื่นของมิ้นต์บริสุทธิ์ เกลือทะเล และไม้สนชายฝั่ง กลิ่นหอมที่เป็นเอกลักษณ์เฉพาะตัว
+                        </p>
+
+                        <div class="product-selection-block">
+                            <div class="selection-row">
+                                <span class="select-label" data-en="Select Volume:" data-th="เลือกขนาด:">เลือกขนาด:</span>
+                                <span class="price-display" id="product-price">฿3,800</span>
+                            </div>
+
+                            <div class="size-pill-group">
+                                <button type="button" class="size-btn active" data-size="50" data-price="3800" data-price-en="$110">
+                                    <span>50 ml</span>
+                                    <small data-en="Standard" data-th="ขนาดมาตรฐาน">ขนาดมาตรฐาน</small>
+                                </button>
+                                <button type="button" class="size-btn" data-size="100" data-price="5600" data-price-en="$165">
+                                    <span>100 ml</span>
+                                    <small data-en="Collector" data-th="ขนาดสะสม">ขนาดสะสม</small>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="quantity-row">
+                            <span class="select-label" data-en="Quantity:" data-th="จำนวน:">จำนวน:</span>
+                            <div class="qty-counter">
+                                <button type="button" class="qty-btn" id="qty-dec" aria-label="Decrease quantity">−</button>
+                                <span class="qty-val" id="qty-val">1</span>
+                                <button type="button" class="qty-btn" id="qty-inc" aria-label="Increase quantity">+</button>
+                            </div>
+                        </div>
+
+                        <button type="button" class="checkout-btn" id="add-to-bag-btn">
+                            <span class="checkout-text" data-en="Add to Bag • ฿3,800" data-th="สั่งซื้อสินค้า • ฿3,800">สั่งซื้อสินค้า • ฿3,800</span>
+                        </button>
+
+                        <div class="card-footer-notes">
+                            <span data-en="✓ Complimentary express delivery" data-th="✓ บริการจัดส่งด่วนพิเศษฟรี">✓ บริการจัดส่งด่วนพิเศษฟรี</span>
+                            <span data-en="✓ Numbered presentation box included" data-th="✓ บรรจุในกล่องลิมิเต็ดพร้อมการ์ดรับรอง">✓ บรรจุในกล่องลิมิเต็ดพร้อมการ์ดรับรอง</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-text">YOUR BRAND</span>
+                <p data-en="Interactive 3D Kinetic Showcase Architecture • Engineered with GSAP & WebGL" data-th="สถาปัตยกรรมจัดแสดงสินค้า 3D เชิงจลน์ • ขับเคลื่อนด้วย GSAP และ WebGL">
+                    สถาปัตยกรรมจัดแสดงสินค้า 3D เชิงจลน์ • ขับเคลื่อนด้วย GSAP และ WebGL
+                </p>
+            </div>
+            <div class="footer-links">
+                <a href="#hero" data-en="Back to Top ↑" data-th="กลับสู่ด้านบน ↑">กลับสู่ด้านบน ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hidden Preload for Berries / Materials -->
+    <div style="display: none;" aria-hidden="true">
+        <model-viewer src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/blueberry.glb"></model-viewer>
+        <model-viewer src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb"></model-viewer>
+    </div>
+
+
+    <!-- Script Application Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
