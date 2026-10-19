@@ -252,7 +252,7 @@
             }
             if (shopProductDesc) {
                 shopProductDesc.setAttribute('data-en', 'Marine coastal iris, wild blueberry dew, and deep cedar resin. Luminous and serene.');
-                shopProductDesc.setAttribute('data-th', 'ไอริสมหาสมุทร หยาดน้ำค้างบลูเบอร์รี่ และยางไม้ซีดาร์ลึก กลิ่นหอมที่สงบนิ่งและตราตรึง');
+                shopProductDesc.setAttribute('data-th', 'ความหอมสดชื่นของไอริสมิเนอรัล ผสานบลูเบอร์รี่ป่าและไอเย็นสายน้ำ สัมผัสที่สุขุม นุ่มลึก และน่าค้นหา');
                 shopProductDesc.textContent = currentLang === 'th'
                     ? shopProductDesc.getAttribute('data-th')
                     : shopProductDesc.getAttribute('data-en');
@@ -266,7 +266,7 @@
             }
             if (shopProductDesc) {
                 shopProductDesc.setAttribute('data-en', 'Crisp botanical mint, sea salt crystals, and deep coastal pine. A tactile celebration of living nature.');
-                shopProductDesc.setAttribute('data-th', 'สัมผัสสดชื่นของมิ้นต์บริสุทธิ์ เกลือทะเล และไม้สนชายฝั่ง กลิ่นหอมที่เป็นเอกลักษณ์เฉพาะตัว');
+                shopProductDesc.setAttribute('data-th', 'ความสดชื่นจากมินต์ธรรมชาติ ผสานเกลือทะเลบริสุทธิ์และกลิ่นอายไม้สนชายฝั่ง รสชาติที่เป็นเอกลักษณ์ไม่เหมือนใคร');
                 shopProductDesc.textContent = currentLang === 'th'
                     ? shopProductDesc.getAttribute('data-th')
                     : shopProductDesc.getAttribute('data-en');
